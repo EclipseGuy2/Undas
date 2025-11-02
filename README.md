@@ -13,6 +13,6 @@ No combat. No dialogue. Just quiet remembrance.
 
 ## 🛠️ Built With
 - GODOT 4
-- 
+
 ## 🇵🇭 Cultural Note
 Undas is deeply rooted in Filipino culture. Families gather at cemeteries, light candles, offer food, and spend time with departed loved ones. This game captures a quiet slice of that experience.
