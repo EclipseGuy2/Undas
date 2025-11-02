@@ -1,0 +1,430 @@
+[gd_scene load_steps=26 format=3 uid="uid://dxu1mfcmegpg1"]
+
+[ext_resource type="Texture2D" uid="uid://ciodfd4rtatim" path="res://Resources/Textures/Ui/UI-19f1.png" id="1_18wyd"]
+[ext_resource type="Script" uid="uid://bxc61iscby3l0" path="res://Sources/control.gd" id="1_pm3q0"]
+[ext_resource type="FontFile" uid="uid://7n8sps8g1n0p" path="res://Resources/Fonts/Rajdhani/Rajdhani-Light.ttf" id="2_yuerc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lfpho"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crw8m"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4l8md"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70vom"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(352, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oigap"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgy7n"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikile"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha101"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18wyd"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uuxwa"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yuerc"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pm3q0"]
+atlas = ExtResource("1_18wyd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yuerc"]
+bg_color = Color(0.15097588, 0.15097588, 0.15097588, 0.39215687)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="LabelSettings" id="LabelSettings_pm3q0"]
+font = ExtResource("2_yuerc")
+font_size = 60
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uuxwa"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lfpho"]
+bg_color = Color(0, 0, 0, 0.39215687)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.42745098)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crw8m"]
+
+[sub_resource type="Animation" id="Animation_uuxwa"]
+resource_name = "Quit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lfpho"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_pm3q0"]
+resource_name = "open_Menu"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Menu:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_crw8m"]
+resource_name = "close_Menu"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Buttons:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Buttons:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Menu:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Menu:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uuxwa"]
+_data = {
+&"Quit": SubResource("Animation_uuxwa"),
+&"RESET": SubResource("Animation_lfpho"),
+&"close_Menu": SubResource("Animation_crw8m"),
+&"open_Menu": SubResource("Animation_pm3q0")
+}
+
+[node name="Control" type="Control" node_paths=PackedStringArray("Buttons", "PauseMenu")]
+z_index = 2
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_pm3q0")
+Buttons = NodePath("Buttons")
+PauseMenu = NodePath("Menu")
+metadata/_edit_lock_ = true
+
+[node name="Buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Up" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(-832, -108)
+scale = Vector2(6, 6)
+texture_normal = SubResource("AtlasTexture_lfpho")
+texture_pressed = SubResource("AtlasTexture_crw8m")
+passby_press = true
+action = "up"
+
+[node name="Menu" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(960, -452)
+scale = Vector2(3.9999962, 4)
+texture_normal = SubResource("AtlasTexture_4l8md")
+texture_pressed = SubResource("AtlasTexture_70vom")
+passby_press = true
+action = "menu"
+
+[node name="Interact" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(768, 124)
+scale = Vector2(8.000001, 7.9999995)
+texture_normal = SubResource("AtlasTexture_oigap")
+texture_pressed = SubResource("AtlasTexture_hgy7n")
+passby_press = true
+action = "interact"
+
+[node name="Down" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(-832, 228)
+scale = Vector2(6, 6)
+texture_normal = SubResource("AtlasTexture_ikile")
+texture_pressed = SubResource("AtlasTexture_ha101")
+passby_press = true
+action = "down"
+
+[node name="Right" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(-664, 60)
+scale = Vector2(6, 6)
+texture_normal = SubResource("AtlasTexture_18wyd")
+texture_pressed = SubResource("AtlasTexture_uuxwa")
+passby_press = true
+action = "right"
+
+[node name="Left" type="TouchScreenButton" parent="Buttons"]
+position = Vector2(-1000, 60)
+scale = Vector2(6, 6)
+texture_normal = SubResource("AtlasTexture_yuerc")
+texture_pressed = SubResource("AtlasTexture_pm3q0")
+passby_press = true
+action = "left"
+
+[node name="Menu" type="Panel" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 600)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yuerc")
+
+[node name="BoxContainer" type="BoxContainer" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -225.0
+offset_top = -192.0
+offset_right = 225.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Menu/BoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "PAUSE MENU"
+label_settings = SubResource("LabelSettings_pm3q0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="Menu/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Menu" type="Button" parent="Menu/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_yuerc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_uuxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lfpho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lfpho")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crw8m")
+text = "CONTINUE"
+
+[node name="Control3" type="Control" parent="Menu/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Replay" type="Button" parent="Menu/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_yuerc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_uuxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lfpho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lfpho")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crw8m")
+text = "REPLAY"
+
+[node name="Control4" type="Control" parent="Menu/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Quit" type="Button" parent="Menu/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(240, 60)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_yuerc")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/normal = SubResource("StyleBoxFlat_uuxwa")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lfpho")
+theme_override_styles/hover = SubResource("StyleBoxFlat_lfpho")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_crw8m")
+text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uuxwa")
+}
+
+[node name="MenuTimer" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Replay" type="Timer" parent="."]
+wait_time = 2.0
+
+[connection signal="pressed" from="Buttons/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Menu/BoxContainer/VBoxContainer/Menu" to="." method="_on_menu_pressed"]
+[connection signal="pressed" from="Menu/BoxContainer/VBoxContainer/Replay" to="." method="_on_replay_pressed"]
+[connection signal="pressed" from="Menu/BoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="MenuTimer" to="." method="_on_menu_timer_timeout"]
+[connection signal="timeout" from="Replay" to="." method="_on_replay_timeout"]

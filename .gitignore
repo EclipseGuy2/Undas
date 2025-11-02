@@ -1,0 +1,62 @@
+<<<<<<< HEAD
+# Godot 4+ specific ignores
+.godot/
+/android/
+=======
+# Godot-specific
+.import/
+.export/
+*.godot
+*.import
+*.tmp
+*.log
+
+# Build artifacts
+bin/
+build/
+dist/
+*.exe
+*.apk
+*.aab
+*.zip
+*.tar.gz
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Node.js / web
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.env
+.env.local
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# HTML/CSS/JS cache
+*.cache
+*.min.js
+*.min.css
+
+# Mobile testing artifacts
+*.keystore
+*.jks
+
+# Logs and temp
+*.log
+*.swp
+*.bak
+*.tmp
+>>>>>>> 86c5defeee95c1ddf0a70488fae8c60205b1ce06

@@ -1,0 +1,272 @@
+[gd_scene load_steps=14 format=3 uid="uid://cmi5kchjlchsn"]
+
+[ext_resource type="Script" uid="uid://b2w1kl8q3y58c" path="res://Sources/main_menu.gd" id="1_0s8ts"]
+[ext_resource type="FontFile" uid="uid://7n8sps8g1n0p" path="res://Resources/Fonts/Rajdhani/Rajdhani-Light.ttf" id="1_usj2c"]
+[ext_resource type="AudioStream" uid="uid://djqdulrdmhu6g" path="res://Resources/Music/moza morph - ☣️XT-01 formula♛ DEFINED FACE Subliminal {defined & top rated model's face}.mp3" id="3_kkluj"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_usj2c"]
+font = ExtResource("1_usj2c")
+font_size = 128
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_usj2c"]
+bg_color = Color(0, 0, 0, 0.39215687)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+shadow_size = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0s8ts"]
+bg_color = Color(0, 0, 0, 0.39215687)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.42745098)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_usj2c"]
+
+[sub_resource type="Animation" id="Animation_kkluj"]
+resource_name = "Default"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [1.0, 0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_0s8ts"]
+resource_name = "Pressed"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-900, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, 0.0]
+}
+
+[sub_resource type="Animation" id="Animation_o2m56"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -188)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("PointLight2D:energy")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kkluj"]
+_data = {
+&"Default": SubResource("Animation_kkluj"),
+&"Pressed": SubResource("Animation_0s8ts"),
+&"RESET": SubResource("Animation_o2m56")
+}
+
+[sub_resource type="Gradient" id="Gradient_6flmm"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b3t7l"]
+gradient = SubResource("Gradient_6flmm")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.1)
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0s8ts")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -512.0
+offset_right = 832.0
+offset_bottom = 512.0
+grow_vertical = 2
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -352.0
+offset_top = -132.0
+offset_right = 352.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+vertical = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="Panel/BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "UNDAS"
+label_settings = SubResource("LabelSettings_usj2c")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control2" type="Control" parent="Panel/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Panel/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_usj2c")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_usj2c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0s8ts")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0s8ts")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_usj2c")
+text = "PLAY"
+
+[node name="Control" type="Control" parent="Panel/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="Panel/BoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(450, 120)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_usj2c")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_usj2c")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_0s8ts")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0s8ts")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_usj2c")
+text = "QUIT"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_kkluj")
+}
+
+[node name="Play" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Quit" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(672, 376)
+scale = Vector2(8, 8)
+color = Color(1, 0.69803923, 0, 1)
+energy = 2.0
+texture = SubResource("GradientTexture2D_b3t7l")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(-112, -72)
+color = Color(0.68693197, 0.68693197, 0.68693185, 1)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_kkluj")
+autoplay = true
+bus = &"Bg"
+
+[connection signal="pressed" from="Panel/BoxContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Panel/BoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="timeout" from="Play" to="." method="_on_play_timeout"]
+[connection signal="timeout" from="Quit" to="." method="_on_quit_timeout"]

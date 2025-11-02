@@ -1,0 +1,527 @@
+[gd_scene load_steps=16 format=3 uid="uid://byykau3tsuq13"]
+
+[ext_resource type="Script" uid="uid://ciye4tcevpfof" path="res://Sources/level_5.gd" id="1_m3owd"]
+[ext_resource type="Texture2D" uid="uid://dokembithf6jr" path="res://Resources/Textures/Misc/Grass-2e0a.png" id="2_fw43e"]
+[ext_resource type="PackedScene" uid="uid://qaesiobnpwji" path="res://Sources/ghost.tscn" id="3_8kl86"]
+[ext_resource type="PackedScene" uid="uid://dxu1mfcmegpg1" path="res://Sources/control.tscn" id="4_v0cjm"]
+[ext_resource type="FontFile" uid="uid://7n8sps8g1n0p" path="res://Resources/Fonts/Rajdhani/Rajdhani-Light.ttf" id="5_4y5ue"]
+[ext_resource type="PackedScene" uid="uid://bupyal1nu77sq" path="res://Sources/grave.tscn" id="6_fffhv"]
+[ext_resource type="PackedScene" uid="uid://cunu8fvaqe4mr" path="res://Sources/tree.tscn" id="7_qa1s1"]
+[ext_resource type="PackedScene" uid="uid://bgut45mistlp5" path="res://Sources/candle.tscn" id="8_jinhx"]
+[ext_resource type="AudioStream" uid="uid://djqdulrdmhu6g" path="res://Resources/Music/moza morph - ☣️XT-01 formula♛ DEFINED FACE Subliminal {defined & top rated model's face}.mp3" id="9_fw43e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uc4cp"]
+font = ExtResource("5_4y5ue")
+font_size = 64
+
+[sub_resource type="Animation" id="Animation_m3owd"]
+resource_name = "Death"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ground:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.5166902, 0.51669025, 0.5166902, 1), Color(0.5176471, 0.5176471, 0.5176471, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Graves:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Trees:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Candles:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ghost/CanvasLayer/Control:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ghost/CanvasLayer/Control:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 2.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Ghost:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_uc4cp"]
+resource_name = "Finish"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ghost/CanvasLayer/Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ghost:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ghost/CanvasLayer/Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ghost:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_x2hf6"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_8wd3w"]
+resource_name = "Start"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost/CanvasLayer/Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ghost/CanvasLayer/Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ghost/CanvasLayer/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uc4cp"]
+_data = {
+&"Death": SubResource("Animation_m3owd"),
+&"Finish": SubResource("Animation_uc4cp"),
+&"RESET": SubResource("Animation_x2hf6"),
+&"Start": SubResource("Animation_8wd3w")
+}
+
+[node name="Level5" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_m3owd")
+metadata/_edit_lock_ = true
+
+[node name="ground" type="Sprite2D" parent="."]
+modulate = Color(0.5166902, 0.51669025, 0.5166902, 1)
+z_index = -2
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(0, 64)
+scale = Vector2(2, 2)
+texture = ExtResource("2_fw43e")
+region_enabled = true
+region_rect = Rect2(0, 0, 4000, 4000)
+metadata/_edit_lock_ = true
+
+[node name="Ghost" parent="." instance=ExtResource("3_8kl86")]
+speed = 200
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ghost"]
+
+[node name="Control" parent="Ghost/CanvasLayer" instance=ExtResource("4_v0cjm")]
+visible = false
+
+[node name="Label" type="Label" parent="Ghost/CanvasLayer"]
+offset_left = -48.0
+offset_top = 80.0
+offset_right = 459.0
+offset_bottom = 163.0
+text = "TIME LEFT:"
+label_settings = SubResource("LabelSettings_uc4cp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uc4cp")
+}
+autoplay = "Start"
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(3.9106236e-08, 0.10284846, 0.10284836, 1)
+
+[node name="Graves" type="Node2D" parent="."]
+
+[node name="Grave3" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(-272, -8)
+sprite = 2
+
+[node name="Grave4" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(376, 88)
+sprite = 2
+
+[node name="Grave5" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(248, 176)
+sprite = 2
+
+[node name="Grave6" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(632, -256)
+sprite = 1
+
+[node name="Grave7" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(976, 64)
+
+[node name="Grave8" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(1160, -256)
+sprite = 1
+
+[node name="Grave2" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(112, -8)
+sprite = 1
+
+[node name="Grave" parent="Graves" instance=ExtResource("6_fffhv")]
+position = Vector2(-144, 128)
+
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree2" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(-280, -320)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(40, 200)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(544, 192)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(608, 24)
+
+[node name="Tree6" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(384, -424)
+
+[node name="Tree7" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(728, -384)
+
+[node name="Tree8" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(1024, -344)
+
+[node name="Tree9" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(1104, 24)
+
+[node name="Tree10" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(832, -56)
+
+[node name="Tree11" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(216, 360)
+
+[node name="Tree12" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(-240, 352)
+
+[node name="Tree13" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(-448, 216)
+
+[node name="Tree14" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(-584, 16)
+
+[node name="Tree15" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(-464, -192)
+
+[node name="Tree16" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(184, -440)
+
+[node name="Tree17" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(1, -881)
+
+[node name="Tree18" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(266, -1159)
+
+[node name="Tree19" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(613, -1468)
+
+[node name="Tree20" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(917, -1516)
+
+[node name="Tree21" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(1026, -1105)
+
+[node name="Tree22" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(1116, -740)
+
+[node name="Tree23" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(426, -879)
+
+[node name="Tree24" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(796, -862)
+
+[node name="Tree25" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(701, -1182)
+
+[node name="Tree" parent="Trees" instance=ExtResource("7_qa1s1")]
+position = Vector2(-24, -320)
+
+[node name="Candles" type="Node2D" parent="."]
+
+[node name="Candle" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(480, -160)
+
+[node name="Candle2" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(562, -533)
+
+[node name="Candle3" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(-181, -244)
+
+[node name="Candle7" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(17, -603)
+
+[node name="Candle8" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(241, -828)
+
+[node name="Candle9" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(644, -789)
+
+[node name="Candle10" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(504, -1221)
+
+[node name="Candle11" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(786, -1556)
+
+[node name="Candle12" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(828, -1161)
+
+[node name="Candle13" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(941, -725)
+
+[node name="Candle14" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(-239, -671)
+
+[node name="Candle15" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(816, 303)
+
+[node name="Candle16" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(-778, -258)
+
+[node name="Candle17" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(550, 551)
+
+[node name="Candle4" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(480, -24)
+
+[node name="Candle5" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(408, 264)
+
+[node name="Candle6" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(1088, -128)
+
+[node name="Candle18" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(750, 502)
+
+[node name="Candle19" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(-817, -37)
+
+[node name="Candle20" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(-8, 499)
+
+[node name="Candle21" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(-440, -567)
+
+[node name="Candle22" parent="Candles" instance=ExtResource("8_jinhx")]
+position = Vector2(104, -1024)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 251.0
+offset_bottom = -173.0
+text = "Will I know you"
+label_settings = SubResource("LabelSettings_uc4cp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="StaticBody2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
+position = Vector2(-102, -132)
+polygon = PackedVector2Array(999, -1626, -1034, -30, -326, 740, 904, 900, 1485, 46, 1010, -1659, 963, -2549, 3162, 313, 2601, 996, 2129, 1613, 1116, 1741, -315, 1816, -1840, 1085, -1875, -337, 935, -2631)
+
+[node name="Finish" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 90.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_fw43e")
+autoplay = true
+bus = &"Bg"
+
+[connection signal="timeout" from="Finish" to="." method="_on_finish_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

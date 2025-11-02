@@ -1,0 +1,330 @@
+[gd_scene load_steps=16 format=3 uid="uid://b2y2654ius86n"]
+
+[ext_resource type="PackedScene" uid="uid://qaesiobnpwji" path="res://Sources/ghost.tscn" id="1_0jjlq"]
+[ext_resource type="Script" uid="uid://bg7x1oid8qagx" path="res://Sources/level_1.gd" id="1_8wd3w"]
+[ext_resource type="PackedScene" uid="uid://dxu1mfcmegpg1" path="res://Sources/control.tscn" id="2_s06hj"]
+[ext_resource type="PackedScene" uid="uid://cunu8fvaqe4mr" path="res://Sources/tree.tscn" id="3_s06hj"]
+[ext_resource type="PackedScene" uid="uid://bupyal1nu77sq" path="res://Sources/grave.tscn" id="5_by8se"]
+[ext_resource type="PackedScene" uid="uid://bgut45mistlp5" path="res://Sources/candle.tscn" id="6_j745y"]
+[ext_resource type="AudioStream" uid="uid://djqdulrdmhu6g" path="res://Resources/Music/moza morph - ☣️XT-01 formula♛ DEFINED FACE Subliminal {defined & top rated model's face}.mp3" id="8_uc4cp"]
+[ext_resource type="FontFile" uid="uid://7n8sps8g1n0p" path="res://Resources/Fonts/Rajdhani/Rajdhani-Light.ttf" id="8_x2hf6"]
+
+[sub_resource type="Gradient" id="Gradient_8wd3w"]
+colors = PackedColorArray(0.4461342, 0.6582264, 0, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_x2hf6"]
+gradient = SubResource("Gradient_8wd3w")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.8, 0.1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uc4cp"]
+font = ExtResource("8_x2hf6")
+font_size = 64
+
+[sub_resource type="Animation" id="Animation_uc4cp"]
+resource_name = "Finish"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ghost/CanvasLayer/Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Ghost:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Ghost/CanvasLayer/Label:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ghost:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(1.8),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_x2hf6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost/CanvasLayer/Label:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8wd3w"]
+resource_name = "Start"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Ghost/CanvasLayer/Control:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Ghost/CanvasLayer/Control:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(5, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CanvasLayer/Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1, 2, 4, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CanvasLayer:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath(".:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Ghost/CanvasLayer/Label:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(2, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uc4cp"]
+_data = {
+&"Finish": SubResource("Animation_uc4cp"),
+&"RESET": SubResource("Animation_x2hf6"),
+&"Start": SubResource("Animation_8wd3w")
+}
+
+[node name="Level1" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_8wd3w")
+metadata/_edit_lock_ = true
+
+[node name="ground" type="Sprite2D" parent="."]
+modulate = Color(0.5166902, 0.51669025, 0.5166902, 1)
+z_index = -2
+texture_filter = 1
+scale = Vector2(80, 80)
+texture = SubResource("GradientTexture2D_x2hf6")
+
+[node name="Ghost" parent="." instance=ExtResource("1_0jjlq")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Ghost"]
+
+[node name="Control" parent="Ghost/CanvasLayer" instance=ExtResource("2_s06hj")]
+visible = false
+
+[node name="Label" type="Label" parent="Ghost/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -48.0
+offset_top = 80.0
+offset_right = 459.0
+offset_bottom = 163.0
+text = "TIME LEFT:"
+label_settings = SubResource("LabelSettings_uc4cp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Trees" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Tree2" parent="Trees" instance=ExtResource("3_s06hj")]
+position = Vector2(-363, -346)
+
+[node name="Tree" parent="Trees" instance=ExtResource("3_s06hj")]
+position = Vector2(302, -223)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_uc4cp")
+}
+autoplay = "Start"
+
+[node name="Graves" type="Node2D" parent="."]
+
+[node name="Grave3" parent="Graves" instance=ExtResource("5_by8se")]
+position = Vector2(80, -280)
+sprite = 2
+
+[node name="Grave2" parent="Graves" instance=ExtResource("5_by8se")]
+position = Vector2(152, -576)
+sprite = 1
+
+[node name="Grave" parent="Graves" instance=ExtResource("5_by8se")]
+position = Vector2(-80, -456)
+
+[node name="Candles" type="Node2D" parent="."]
+
+[node name="Candle" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(-8, -264)
+
+[node name="Candle2" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(-176, -216)
+
+[node name="Candle3" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(128, -160)
+
+[node name="Candle4" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(224, -480)
+
+[node name="Candle5" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(24, -488)
+
+[node name="Candle6" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(440, -256)
+
+[node name="Candle7" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(240, 56)
+
+[node name="Candle8" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(-296, 96)
+
+[node name="Candle9" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(-464, -64)
+
+[node name="Candle10" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(536, 32)
+
+[node name="Candle11" parent="Candles" instance=ExtResource("6_j745y")]
+position = Vector2(688, -168)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
+follow_viewport_enabled = true
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 251.0
+offset_bottom = -173.0
+text = "LIGHT THE CANDLES"
+label_settings = SubResource("LabelSettings_uc4cp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Border" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Border"]
+polygon = PackedVector2Array(-1184, 344, -104, 992, 1360, 480, 1192, -480, 472, -1096, -976, -776, -1352, 408, -1680, 624, -1488, -984, -120, -1456, 1312, -1152, 2096, -472, 1800, 640, -200, 1360, -1728, 688)
+
+[node name="Finish" type="Timer" parent="."]
+wait_time = 2.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 60.0
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(9.024516e-09, 0.099483676, 0.09948362, 1)
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+current = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_uc4cp")
+autoplay = true
+bus = &"Bg"
+
+[connection signal="timeout" from="Finish" to="." method="_on_finish_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

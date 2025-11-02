@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://bupyal1nu77sq"]
+
+[ext_resource type="Texture2D" uid="uid://be833f1eab2bo" path="res://Resources/Textures/Misc/Grave-19f2.png" id="1_0f7lg"]
+[ext_resource type="Script" uid="uid://c5gi5n8p54n0j" path="res://Sources/grave.gd" id="1_e555d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f7lg"]
+size = Vector2(104, 34)
+
+[node name="Grave" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_e555d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(0, 48)
+scale = Vector2(4, 4)
+texture = ExtResource("1_0f7lg")
+offset = Vector2(0, -12)
+hframes = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 49)
+shape = SubResource("RectangleShape2D_0f7lg")
