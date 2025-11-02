@@ -348,4 +348,8 @@ label_settings = SubResource("LabelSettings_ygoag")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Lighting" type="Timer" parent="."]
+wait_time = 0.5
+
 [connection signal="timeout" from="start" to="." method="_on_start_timeout"]
+[connection signal="timeout" from="Lighting" to="." method="_on_lighting_timeout"]

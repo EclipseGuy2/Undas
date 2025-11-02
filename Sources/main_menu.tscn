@@ -248,7 +248,7 @@ wait_time = 2.0
 wait_time = 2.0
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(672, 376)
+position = Vector2(520, 432)
 scale = Vector2(8, 8)
 color = Color(1, 0.69803923, 0, 1)
 energy = 2.0
@@ -256,7 +256,7 @@ texture = SubResource("GradientTexture2D_b3t7l")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(-112, -72)
-color = Color(0.68693197, 0.68693197, 0.68693185, 1)
+color = Color(0.16206554, 0.16206563, 0.16206542, 1)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true

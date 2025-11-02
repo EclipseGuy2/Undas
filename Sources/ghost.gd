@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var anim = $AnimationPlayer
 @onready var sprite = $Sprite2D
 
+var lighting = false
 var litup = 0
 var start = true
 
@@ -19,6 +20,11 @@ func _physics_process(_delta):
 	).normalized()
 
 	velocity = input_vector * speed
+	
+	if Input.is_action_just_pressed("interact"):
+		$Lighting.start()
+		lighting = true
+	
 	move_and_slide()
 
 func _process(_delta: float) -> void:
@@ -28,6 +34,10 @@ func _process(_delta: float) -> void:
 	else:
 		if velocity.x != 0:
 			anim.play("Walk")
+			
+		if lighting:
+			anim.play("Interact")
+		
 		else:
 			anim.play("Idle")
 		
@@ -43,3 +53,7 @@ func lit():
 
 func _on_start_timeout() -> void:
 	start = false
+
+
+func _on_lighting_timeout() -> void:
+	lighting = false

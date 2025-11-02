@@ -212,7 +212,7 @@ position = Vector2(0, 24)
 shape = SubResource("CapsuleShape2D_pd0y7")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(8, -40)
 emitting = false
 amount = 20
 lifetime = 4.0
@@ -220,8 +220,8 @@ randomness = 1.0
 spread = 180.0
 gravity = Vector2(0, -20)
 initial_velocity_max = 10.0
-scale_amount_min = 6.0
-scale_amount_max = 8.0
+scale_amount_min = 2.0
+scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_pd0y7")
 color = Color(4.038222, 1.6378694, 2.653879e-05, 1)
 color_ramp = SubResource("Gradient_pd0y7")

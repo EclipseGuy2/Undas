@@ -1,22 +1,14 @@
-[gd_scene load_steps=16 format=3 uid="uid://b2y2654ius86n"]
+[gd_scene load_steps=17 format=3 uid="uid://b2y2654ius86n"]
 
 [ext_resource type="PackedScene" uid="uid://qaesiobnpwji" path="res://Sources/ghost.tscn" id="1_0jjlq"]
 [ext_resource type="Script" uid="uid://bg7x1oid8qagx" path="res://Sources/level_1.gd" id="1_8wd3w"]
 [ext_resource type="PackedScene" uid="uid://dxu1mfcmegpg1" path="res://Sources/control.tscn" id="2_s06hj"]
+[ext_resource type="Texture2D" uid="uid://bvxou88w3id78" path="res://Resources/Textures/Misc/ground-1e09.png" id="2_uc4cp"]
 [ext_resource type="PackedScene" uid="uid://cunu8fvaqe4mr" path="res://Sources/tree.tscn" id="3_s06hj"]
 [ext_resource type="PackedScene" uid="uid://bupyal1nu77sq" path="res://Sources/grave.tscn" id="5_by8se"]
 [ext_resource type="PackedScene" uid="uid://bgut45mistlp5" path="res://Sources/candle.tscn" id="6_j745y"]
 [ext_resource type="AudioStream" uid="uid://djqdulrdmhu6g" path="res://Resources/Music/moza morph - ☣️XT-01 formula♛ DEFINED FACE Subliminal {defined & top rated model's face}.mp3" id="8_uc4cp"]
 [ext_resource type="FontFile" uid="uid://7n8sps8g1n0p" path="res://Resources/Fonts/Rajdhani/Rajdhani-Light.ttf" id="8_x2hf6"]
-
-[sub_resource type="Gradient" id="Gradient_8wd3w"]
-colors = PackedColorArray(0.4461342, 0.6582264, 0, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_x2hf6"]
-gradient = SubResource("Gradient_8wd3w")
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-fill_to = Vector2(0.8, 0.1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_uc4cp"]
 font = ExtResource("8_x2hf6")
@@ -196,6 +188,12 @@ _data = {
 &"Start": SubResource("Animation_8wd3w")
 }
 
+[sub_resource type="Curve" id="Curve_uc4cp"]
+_data = [Vector2(0, 0.5694913), 0.0, 0.0, 0, 0, Vector2(0.64115614, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_klyig"]
+
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_8wd3w")
@@ -205,8 +203,8 @@ metadata/_edit_lock_ = true
 modulate = Color(0.5166902, 0.51669025, 0.5166902, 1)
 z_index = -2
 texture_filter = 1
-scale = Vector2(80, 80)
-texture = SubResource("GradientTexture2D_x2hf6")
+scale = Vector2(200, 200)
+texture = ExtResource("2_uc4cp")
 
 [node name="Ghost" parent="." instance=ExtResource("1_0jjlq")]
 
@@ -234,6 +232,15 @@ position = Vector2(-363, -346)
 
 [node name="Tree" parent="Trees" instance=ExtResource("3_s06hj")]
 position = Vector2(302, -223)
+
+[node name="Tree3" parent="Trees" instance=ExtResource("3_s06hj")]
+position = Vector2(-120, 170)
+
+[node name="Tree4" parent="Trees" instance=ExtResource("3_s06hj")]
+position = Vector2(398, 201)
+
+[node name="Tree5" parent="Trees" instance=ExtResource("3_s06hj")]
+position = Vector2(480, -604)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -316,7 +323,7 @@ wait_time = 2.0
 wait_time = 60.0
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(9.024516e-09, 0.099483676, 0.09948362, 1)
+color = Color(0.27066806, 0.15741259, 0.024745462, 1)
 
 [node name="AudioListener2D" type="AudioListener2D" parent="."]
 current = true
@@ -325,6 +332,20 @@ current = true
 stream = ExtResource("8_uc4cp")
 autoplay = true
 bus = &"Bg"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 64
+lifetime = 10.0
+randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 1000)
+spread = 180.0
+gravity = Vector2(0, -20)
+initial_velocity_max = 180.0
+scale_amount_min = 10.0
+scale_amount_max = 14.0
+scale_amount_curve = SubResource("Curve_uc4cp")
+color_ramp = SubResource("Gradient_klyig")
 
 [connection signal="timeout" from="Finish" to="." method="_on_finish_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
